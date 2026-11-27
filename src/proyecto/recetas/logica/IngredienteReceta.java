@@ -1,13 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto.recetas.logica;
 
-/**
- *
- * @author kendall
- */
-public class IngredienteReceta {
-    
+import java.io.Serializable;
+
+public class IngredienteReceta implements Serializable {
+
+    private String cantidad;
+    private Ingrediente ingrediente;
+
+    public IngredienteReceta(Ingrediente ingrediente, String cantidad) {
+        this.ingrediente = ingrediente;
+        this.cantidad = cantidad;
+    }
+
+    public Ingrediente getIngrediente() {
+        return ingrediente;
+    }
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
 }

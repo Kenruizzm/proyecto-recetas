@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
- */
 package proyecto.recetas.logica;
 
-/**
- *
- * @author kendall
- */
 public enum RangoDuracion {
-    
+    MENOS_DE_30_MIN, ENTRE_30_Y_60_MIN, MAS_DE_60_MIN;
+
+    // Indica si una duración en horas cae dentro de este rango
+    public boolean contiene(double horas) {
+        double minutos = horas * 60;
+        switch (this) {
+            case MENOS_DE_30_MIN:
+                return minutos < 30;
+            case ENTRE_30_Y_60_MIN:
+                return minutos >= 30 && minutos <= 60;
+            default:
+                return minutos > 60;
+        }
+    }
 }
